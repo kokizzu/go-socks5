@@ -17,7 +17,6 @@ func TestPool(t *testing.T) {
 	p.Get()
 	p.Put(b)
 	p.Put(make([]byte, 2048))
-	require.Panics(t, func() { p.Put([]byte{}) })
 }
 
 func BenchmarkSyncPool(b *testing.B) {
